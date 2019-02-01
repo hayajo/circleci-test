@@ -1,3 +1,4 @@
 # circileci-test
 
 - foo
+- bar
