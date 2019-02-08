@@ -6,15 +6,28 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Build message
+          command: echo "Build Job"
       - run:
           name: Print the Current Time
           command: date
+  pre_deploy:
+    docker:
+      - image: debian:stretch
+    steps:
+      - run:
+          name: Pre deploy message
+          command: echo "Pre Deploy Job"
+      - run:
+          name: Print new version
+          command: echo ${CIRCLE_BRANCH} | sed 's/.*-\([0-9.]\+\)$/\1/'
   deploy:
     docker:
       - image: debian:stretch
     steps:
+      - run:
+          name: Deploy message
+          command: echo "Deploy Job"
       - run:
           name: Print tag
           command: echo ${CIRCLE_TAG}
@@ -30,6 +43,12 @@ workflows:
               only: /.*/
             branches:
               only: /.*/
+      - pre_deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: /^bump-version-[0-9.]+$/
       - deploy:
           requires:
             - build
