@@ -20,7 +20,9 @@ jobs:
           command: echo "Pre Deploy Job"
       - run:
           name: Print new version
-          command: echo ${CIRCLE_BRANCH} | sed 's/.*-\([0-9.]\+\)$/\1/'
+          command: |
+            NEW_VERSION=$(echo ${CIRCLE_BRANCH} | sed 's/.*-\([0-9.]\+\)$/\1/');
+            echo ${NEW_VERSION}
   deploy:
     docker:
       - image: debian:stretch
