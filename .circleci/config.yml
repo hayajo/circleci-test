@@ -14,6 +14,8 @@ jobs:
   pre_deploy:
     docker:
       - image: debian:stretch
+    environment:
+      SUFFIX: "-pre"
     steps:
       - run:
           name: Pre deploy message
@@ -22,7 +24,7 @@ jobs:
           name: Print new version
           command: |
             NEW_VERSION=$(echo ${CIRCLE_BRANCH} | sed 's/.*-\([0-9.]\+\)$/\1/');
-            echo ${NEW_VERSION}
+            echo ${NEW_VERSION}${SUFFIX}
   deploy:
     docker:
       - image: debian:stretch
