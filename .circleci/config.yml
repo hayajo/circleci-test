@@ -11,6 +11,13 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+  pre_deploy:
+    docker:
+      - image: debian:stretch
+    steps:
+      - run:
+          name: Print new version
+          command: echo ${CIRCLE_BRANCH} | sed 's/.*-\([0-9.]\+\)$/\1/'
   deploy:
     docker:
       - image: debian:stretch
@@ -30,6 +37,12 @@ workflows:
               only: /.*/
             branches:
               only: /.*/
+      - pre_deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: /^bump-version-[0-9.]+$/
       - deploy:
           requires:
             - build
