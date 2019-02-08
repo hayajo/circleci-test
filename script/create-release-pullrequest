@@ -2,7 +2,7 @@
 
 =head DESCRIPTION
 
-releng script for mackerel-container-agent
+releng script for circleci-test
 
 =head SYNOPSIS
 
@@ -28,4 +28,4 @@ use Mackerel::ReleaseUtils qw/create_release_pull_request/;
     *{'Mackerel::ReleaseUtils::update_versions'} = sub {};
 }
 
-create_release_pull_request 'mackerel-container-agent';
+create_release_pull_request 'circleci-test';
