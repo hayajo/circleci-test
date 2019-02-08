@@ -1,5 +1,5 @@
 BIN := circleci-test
-VERSION = 0.0.7
+VERSION = 0.0.8
 
 all: version
 

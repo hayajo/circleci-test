@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.8 (2019-02-08)
+
+* fix project name #15 (hayajo)
+
+
 ## 0.0.7 (2019-02-08)
 
 * Don't run gobump #13 (hayajo)
