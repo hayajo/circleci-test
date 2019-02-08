@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.9 (2019-02-08)
+
+* Pre deploy #17 (hayajo)
+
+
 ## 0.0.8 (2019-02-08)
 
 * fix project name #15 (hayajo)
