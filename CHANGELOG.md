@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.7 (2019-02-08)
+
+* Don't run gobump #13 (hayajo)
+* Release version 0.0.6 #12 (hayajo)
+
+
 ## 0.0.6 (2019-02-07)
 
 * main.goを追加 #11 (hayajo)
