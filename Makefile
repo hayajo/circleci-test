@@ -1,5 +1,5 @@
 BIN := circleci-test
-VERSION = 0.0.10
+VERSION = 0.0.11
 
 .PHONY: all
 all: version

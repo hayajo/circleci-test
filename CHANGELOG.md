@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.11 (2019-02-09)
+
+* adopt clark grubb style #23 (hayajo)
+* コマンドを修正 #22 (hayajo)
+* 環境変数SUFFIXを追加 #21 (hayajo)
+
+
 ## 0.0.10 (2019-02-08)
 
 * シェル変数の確認 #19 (hayajo)
